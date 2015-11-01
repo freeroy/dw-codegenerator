@@ -87,8 +87,4 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<modules>
-		<module>dw-codegenerator-core</module>
-		<module>dw-codegenerator-webapp</module>
-	</modules>
 </project>
