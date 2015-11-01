@@ -1,0 +1,86 @@
+* {
+	font-size: 12px;
+}
+
+.top {
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	font-size: 40px;
+	font-weight: bolder;
+}
+
+.body{
+	text-align:center;
+}
+
+.body form{
+	margin:auto;
+	padding:20px;
+	width:700px;
+	border:solid 1px;
+}
+
+.body form input{
+	vertical-align: middle;
+}
+
+.body form ul {
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+	overflow: hidden;
+	zoom: 1
+}
+
+.body form ul li {
+	list-style: none;
+	float: left;
+	text-align: left;
+	vertical-align:middle;
+	heigth:20px;
+	line-height:20px;
+	padding: 5px
+}
+
+.controller{
+	text-align: center
+}
+
+.controller input{
+	height:30px;
+	font-size: 20px
+}
+
+.body .title{
+	background:#000000;
+	color:#FFFFFF;
+	text-align: center;
+	font-size:18px;
+	font-weight:bolder;
+	height:30px;
+	line-height: 30px;
+}
+.msg{
+	width:700px;
+	margin:auto;
+	padding:10px;
+	border:solid 1px #000000;
+	text-align:center;
+	font-size: 20px;
+	line-height:40px;
+	color: #FF0000
+}
+.body .log{
+	line-height: 20px;
+	white-space: normal;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.bottom {
+	text-align: center;
+	height: 40px;
+	line-height: 40px
+}

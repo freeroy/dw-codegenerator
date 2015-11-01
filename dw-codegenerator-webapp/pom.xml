@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>org.developerworld.codegenerator</groupId>
+		<artifactId>dw-codegenerator</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>dw-codegenerator-webapp</artifactId>
+	<name>dw-codegenerator-webapp</name>
+	<description>代码生成器web应用工程</description>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.developerworld.codegenerator</groupId>
+			<artifactId>dw-codegenerator-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.developerworld.commons</groupId>
+			<artifactId>dw-commons-compress</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.developerworld.3rdparty.ojdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<classifier>jre5</classifier>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.developerworld.3rdparty.ojdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<classifier>jre6</classifier>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.developerworld.3rdparty.sqljdbc</groupId>
+			<artifactId>sqljdbc</artifactId>
+			<classifier>jre5</classifier>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.developerworld.3rdparty.sqljdbc</groupId>
+			<artifactId>sqljdbc</artifactId>
+			<classifier>jre6</classifier>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.developerworld.3rdparty.db2jcc</groupId>
+			<artifactId>db2jcc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<!-- 把class打包jar作为附件 -->
+					<attachClasses>true</attachClasses>
+					<!-- 把class打包jar -->
+					<archiveClasses>true</archiveClasses>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

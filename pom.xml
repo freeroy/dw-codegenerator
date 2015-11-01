@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.developerworld.maven</groupId>
+		<artifactId>dw-maven-parent</artifactId>
+		<version>0.0.3</version>
+	</parent>
+
+	<groupId>org.developerworld.codegenerator</groupId>
+	<artifactId>dw-codegenerator</artifactId>
+	<packaging>pom</packaging>
+	<name>dw-codegenerator</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<description>代码生成器主工程</description>
+
+	<!-- scm配置 -->
+	<scm>
+		<connection>${scm.connection}</connection>
+		<developerConnection>${scm.developerConnection}</developerConnection>
+		<url>${scm.url}</url>
+	</scm>
+ 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.developerworld.commons</groupId>
+				<artifactId>dw-commons-compress</artifactId>
+				<version>0.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.commons</groupId>
+				<artifactId>dw-commons-dbutils</artifactId>
+				<version>0.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>2.3.22</version>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.3rdparty.ojdbc</groupId>
+				<artifactId>ojdbc</artifactId>
+				<version>11.2.0.4</version>
+				<classifier>jre5</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.3rdparty.ojdbc</groupId>
+				<artifactId>ojdbc</artifactId>
+				<version>11.2.0.4</version>
+				<classifier>jre6</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.3rdparty.sqljdbc</groupId>
+				<artifactId>sqljdbc</artifactId>
+				<version>4.0</version>
+				<classifier>jre6</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.3rdparty.sqljdbc</groupId>
+				<artifactId>sqljdbc</artifactId>
+				<version>4.0</version>
+				<classifier>jre5</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.3rdparty.db2jcc</groupId>
+				<artifactId>db2jcc</artifactId>
+				<version>9.7</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.36</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>dw-codegenerator-core</module>
+		<module>dw-codegenerator-webapp</module>
+	</modules>
+</project>

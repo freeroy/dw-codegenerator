@@ -1,0 +1,10 @@
+<#assign nowDateTime =.now/>
+<#assign projectName ="product"/>
+<#assign basePackage ="com.pmparkchina"/>
+<#assign jspBasePath ="wms"/>
+<#assign author="Roy.Huang@developerworld.org"/>
+<#assign version=nowDateTime?string("yyyyMMdd")/>
+<#assign tableName=table.name?upper_case/>
+<#assign moduleName=tableNameToModuleName(tableName)/>
+<#assign className=tableNameToClassName(tableName)/>
+<#assign objectName=className?uncap_first/>
