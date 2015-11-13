@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.developerworld.maven</groupId>
 		<artifactId>dw-maven-parent</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.4</version>
 		<relativePath>../dw-maven-parent/pom.xml</relativePath>
 	</parent>
 
@@ -28,12 +28,12 @@
 			<dependency>
 				<groupId>org.developerworld.commons</groupId>
 				<artifactId>dw-commons-compress</artifactId>
-				<version>0.0.2</version>
+				<version>0.0.3</version>
 			</dependency>
 			<dependency>
 				<groupId>org.developerworld.commons</groupId>
 				<artifactId>dw-commons-dbutils</artifactId>
-				<version>0.0.2</version>
+				<version>0.0.3</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-lang</groupId>
