@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.developerworld.maven</groupId>
 		<artifactId>dw-maven-parent</artifactId>
-		<version>0.0.4</version>
+		<version>0.0.3</version>
 		<relativePath>../dw-maven-parent/pom.xml</relativePath>
 	</parent>
 
