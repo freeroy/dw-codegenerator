@@ -15,13 +15,13 @@
 			读取projectName变量信息：${projectName}<br /> <br /> 3、获取数据库表信息<br />
 			3.1、生成器在访问毎一个模板文件的时候，都会带住相关数据库表信息对像，用于供模板读取表信息，该对象面为table，我们可以通过以下代码引用该对象(具体输出结构，请看生成后的文件)<br />
 			${table}<br />
-			该对象实则上市org.developerworld.commons.db.info.Table类的一个对象实例。<br />
+			该对象实则上是org.developerworld.commons.dbutils.info.object.Table类的一个对象实例。<br />
 			其包含大量数据库表的信息。<br /> <br /> 3.2、获取表所在数据库名<br /> ${table.catalog!""}<br />
 			<br /> 3.3、获取表所在数据库空间<br /> ${table.schema!""}<br /> <br />
 			3.4、获取表名<br /> ${table.name!""}<br /> <br /> 3.5、获取表类型(物理表、视图...)<br />
 			${table.type!""}<br /> <br /> 3.6、表备注<br /> ${table.remarks!""}<br />
 			<br /> 3.7、获取字段集合<br />
-			${table.columns}，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.Column对象<br />
+			${table.columns}，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Column对象<br />
 			3.7.1、每个column对象的信息<br /> 字段名称：table.columns[?].name<br />
 			字段类型：table.columns[?].type,返回类型对应java.sql.Types<br />
 			字段类型名：table.columns[?].typeName，如返回varchar、datetime等，具体视数据库定义而定<br />
@@ -31,27 +31,27 @@
 			是否允许为空：table.columns[?].isAutoIncrement<br />
 			默认值：table.columns[?].defaultValue<br /> 备注：table.columns[?].remarks<br />
 			<br /> 3.8、获取主键信息<br />
-			${table.primaryKey}，返回org.developerworld.commons.db.info.PrimarkKey对象<br />
+			${table.primaryKey}，返回org.developerworld.commons.dbutils.info.object.PrimarkKey对象<br />
 			<br /> 3.8.1、获取主键其它信息<br /> 主键名：table.primaryKey.name<br />
-			主键关联字段：table.primaryKey.columns，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.Column对象<br />
-			主键关联的外键表：table.primaryKey.foreignTables，返回List集合，集合中的元素为org.developerworld.commons.db.info.Table对象<br />
+			主键关联字段：table.primaryKey.columns，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Column对象<br />
+			主键关联的外键表：table.primaryKey.foreignTables，返回List集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Table对象<br />
 			主键关联的外检表对应外键列：table.primaryKey.foreignColumns，返回一个Set集合，毎个元素代表针对一个外键关联表的关联字段集合，所以元素也为Set，<br />
 			<br /> 3.9、获取外键信息<br />
-			${table.foreignKeys}，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.ForeignKey对象<br />
+			${table.foreignKeys}，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.ForeignKey对象<br />
 			<br /> 3.9.1、获取外键其它信息<br /> 外键名：table.foreignKeys[?].name<br />
-			外键关联本表字段：table.foreignKeys[?].columns，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.Column对象<br />
-			外键对应主表的字段：table.foreignKeys[?].primaryColumns，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.Column对象<br />
-			外键关联的主表：table.foreignKeys[?].primaryTable,返回developerworld.commons.db.info.Table对象<br />
+			外键关联本表字段：table.foreignKeys[?].columns，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Column对象<br />
+			外键对应主表的字段：table.foreignKeys[?].primaryColumns，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Column对象<br />
+			外键关联的主表：table.foreignKeys[?].primaryTable,返回developerworld.commons.dbutils.info.object.Table对象<br />
 			<br /> 3.10、获取索引信息<br />
-			${table.indexs}，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.Index对象<br />
+			${table.indexs}，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Index对象<br />
 			<br /> 3.10.1、获取索引其它信息<br /> 索引名：table.indexs[?].name<br />
-			索引关联字段：table.indexs[?].columns，返回一个Set集合，集合中的元素为org.developerworld.commons.db.info.Column对象<br />
+			索引关联字段：table.indexs[?].columns，返回一个Set集合，集合中的元素为org.developerworld.commons.dbutils.info.object.Column对象<br />
 			索引排列方式：table.indexs[?].columnSortords，返回一个List集合，集合中元素为针对不同索引字段的排序方式(asc/desc)<br />
 			索引是否唯一：table.indexs[?].isUnique<br /><br />
 			4、关于自定义标签及自定义函数<br /><br />
 			4.1、开发者可以根据自己的生成需要，进行相关模板函数、标签的自定义开发（参考freemarker规范）。<br /><br />
 			4.2、完成相关程序开发后，可在step_5.jsp文件中，在生成器中注册这些自定义的标签及函数（通过调用addTemplateDirectiveModel、addTemplateMethodModel方法进行注册），并在模板中使用.<br /><br />
-			4.3、默认地，会提供以下自定义函数支持(相关程序在org.developerworld.product.codegenerator.freemarker.method包下)：<br />
+			4.3、默认地，会提供以下自定义函数支持(相关程序在org.developerworld.codegenerator.freemarker.method包下)：<br />
 			columnNameToFieldName(String columnName)——根据字段名返回成员变量名(字段名根据规范，要求多个单词之间，用"_"分隔)<br />
 			columnTypeToFieldType(int type)——根据数据库字段类型，返回对应的java类型(数据库字段类型根据java.sql.Types决定)<br />
 			foreignColumnNameToFieldObjectName(String columnName,String foreignColumnName)——根据外键字段名返回成员变量对象名<br />
