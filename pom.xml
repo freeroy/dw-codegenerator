@@ -13,7 +13,7 @@
 	<artifactId>dw-codegenerator</artifactId>
 	<packaging>pom</packaging>
 	<name>dw-codegenerator</name>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<description>代码生成器主工程</description>
 
 	<!-- scm配置 -->
