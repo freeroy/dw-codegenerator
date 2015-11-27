@@ -13,7 +13,7 @@ import org.developerworld.commons.command.OrderCommand;
 import org.developerworld.commons.command.PageCommand;
 import org.developerworld.commons.command.ResultCommand;
 import org.developerworld.commons.beanutils.BeanUtils;
-import org.developerworld.commons.lang.OperationException;
+
 import org.developerworld.frameworks.webui.datagrid.DataGrid;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -211,7 +211,7 @@ public class ${className}Controller extends AbstractBaseController {
 			return new ResultCommand<Map<String, Object>>()
 					.status(ResultCommand.STATUS_SUCCESS)
 					.message(getMessage("${moduleName}.message.create.success")).toMap();
-		} catch (OperationException e) {
+		} catch (Exception e) {
 			return new ResultCommand<Map<String, Object>>()
 					.status(ResultCommand.STATUS_ERROR)
 					.message(getMessage(e.getMessage())).toMap();
@@ -326,7 +326,7 @@ public class ${className}Controller extends AbstractBaseController {
 	 */
 	@RequestMapping(method = RequestMethod.DELETE)
 	@ResponseBody
-	public Map<String, Object> destory(${pkType}[] ${pkName}) throws OperationException{
+	public Map<String, Object> destory(${pkType}[] ${pkName}) throws Exception{
 		businessService.delete${className}By${pkName?cap_first}s(${pkName});
 		return new ResultCommand<Map<String, Object>>()
 				.status(ResultCommand.STATUS_SUCCESS)

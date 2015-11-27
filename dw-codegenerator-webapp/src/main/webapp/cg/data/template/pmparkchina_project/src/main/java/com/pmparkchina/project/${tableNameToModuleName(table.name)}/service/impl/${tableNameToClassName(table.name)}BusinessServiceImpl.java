@@ -6,7 +6,6 @@ import java.util.*;
 
 import javax.annotation.Resource;
 
-import org.developerworld.commons.lang.OperationException;
 import org.developerworld.commons.command.OrderCommand;
 import org.developerworld.commons.command.PageCommand;
 import org.developerworld.commons.beanutils.BeanUtils;
@@ -41,7 +40,7 @@ public class ${className}BusinessServiceImpl extends AbstractBaseServiceImpl imp
 			<#assign foreignArgs=foreignArgs+columnTypeToFieldType(fkColumn.type,fkColumn.typeName)+" "+columnNameToFieldName(fkColumn.name)+","/>
 		</#list>
 	</#list>
-	public void create${className}(${foreignArgs} ${className} ${objectName}) throws OperationException{
+	public void create${className}(${foreignArgs} ${className} ${objectName}) throws Exception{
 		<#list table.foreignKeys as foreignKey>
 			<#assign foreignClass=tableNameToClassName(foreignKey.primaryTable.name)/>
 			<#assign foreignObject=foreignColumnNameToFieldObjectName(foreignKey.columns[0].name,foreignKey.primaryTable.columns[0].name)/>
@@ -101,7 +100,7 @@ public class ${className}BusinessServiceImpl extends AbstractBaseServiceImpl imp
 				</#if>
 			</#list>
 		</#list>
-		public void update${className}(${pkType} ${pkName},${foreignArgs} ${className} ${objectName}) throws InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException,OperationException{
+		public void update${className}(${pkType} ${pkName},${foreignArgs} ${className} ${objectName}) throws Exception{
 			//设置关联实体属性
 			${className} curr${className}=get${className}By${pkName?cap_first}(${pkName});
 			<#list table.foreignKeys as foreignKey>
@@ -177,11 +176,11 @@ public class ${className}BusinessServiceImpl extends AbstractBaseServiceImpl imp
 			${objectName}Dao.update(curr${className});
 		}
 
-		public void delete${className}By${pkName?cap_first}(${pkType} ${pkName}) throws OperationException{
+		public void delete${className}By${pkName?cap_first}(${pkType} ${pkName}) throws Exception{
 			${objectName}Dao.delete(${pkName});
 		}
 		
-		public void delete${className}By${pkName?cap_first}s(${pkType}[] ${pkName}s) throws OperationException{
+		public void delete${className}By${pkName?cap_first}s(${pkType}[] ${pkName}s) throws Exception{
 			${objectName}Dao.delete(${pkName}s);
 		}
 	</#if>

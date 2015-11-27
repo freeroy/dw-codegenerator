@@ -4,7 +4,7 @@ package ${basePackage}.${projectName}.${moduleName}.service;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-import org.developerworld.commons.lang.OperationException;
+
 import org.developerworld.commons.command.OrderCommand;
 import org.developerworld.commons.command.PageCommand;
 
@@ -38,9 +38,9 @@ public interface ${className}BusinessService extends BaseService{
 	</#list>
 	 * @param ${objectName}
 	 * 
-	 * @throws OperationException
+	 * @throws Exception
 	 */
-	public void create${className}(${foreignArgs} ${className} ${objectName}) throws OperationException;
+	public void create${className}(${foreignArgs} ${className} ${objectName}) throws Exception;
 	
 	<#if table.primaryKey??>
 		<#assign pkType=""/>
@@ -99,25 +99,25 @@ public interface ${className}BusinessService extends BaseService{
 		 * @throws InstantiationException
 		 * @throws OperationExcception
 		 */
-		public void update${className}(${pkType} ${pkName},${foreignArgs} ${className} ${objectName})  throws IllegalAccessException, InvocationTargetException, NoSuchMethodException,InstantiationException, OperationException;
+		public void update${className}(${pkType} ${pkName},${foreignArgs} ${className} ${objectName})  throws IllegalAccessException, InvocationTargetException, NoSuchMethodException,InstantiationException, Exception;
 		
 		/**
 		 * 根据主键删除${className}实体对象信息
 		 * 
 		 * @param ${pkName}
 		 * 
-		 * @throws OperationException
+		 * @throws Exception
 		 */
-		public void delete${className}By${pkName?cap_first}(${pkType} ${pkName}) throws OperationException;
+		public void delete${className}By${pkName?cap_first}(${pkType} ${pkName}) throws Exception;
 		
 		/**
 		 * 根据主键集合删除${className}实体对象信息
 		 * 
 		 * @param ${pkName}s
 		 * 
-		 * @throws OperationException
+		 * @throws Exception
 		 */
-		public void delete${className}By${pkName?cap_first}s(${pkType}[] ${pkName}s) throws OperationException;
+		public void delete${className}By${pkName?cap_first}s(${pkType}[] ${pkName}s) throws Exception;
 	</#if>
 	
 	/**

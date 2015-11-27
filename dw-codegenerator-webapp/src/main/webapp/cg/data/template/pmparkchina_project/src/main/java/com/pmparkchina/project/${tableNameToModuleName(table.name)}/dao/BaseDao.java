@@ -3,7 +3,7 @@ package ${basePackage}.${projectName}.${moduleName}.dao;
 
 import java.io.Serializable;
 
-import org.developerworld.commons.db.dao.GenericDao;
+import org.developerworld.commons.dbutils.crud.GenericDao;
 
 /**
  * 公共DAO接口
