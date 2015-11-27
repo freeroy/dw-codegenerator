@@ -32,6 +32,11 @@
 			</dependency>
 			<dependency>
 				<groupId>org.developerworld.commons</groupId>
+				<artifactId>dw-commons-servlet</artifactId>
+				<version>0.0.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.developerworld.commons</groupId>
 				<artifactId>dw-commons-dbutils</artifactId>
 				<version>0.0.3</version>
 			</dependency>

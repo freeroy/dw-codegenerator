@@ -24,6 +24,10 @@
 			<artifactId>dw-commons-compress</artifactId>
 		</dependency>
 		<dependency>
+				<groupId>org.developerworld.commons</groupId>
+				<artifactId>dw-commons-servlet</artifactId>
+			</dependency>
+		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
